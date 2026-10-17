@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="StopArea" format=3 uid="uid://b586nnsg3jg72"]
+
+[ext_resource type="Script" uid="uid://ht006ss8c7s0" path="res://Resource/RScripts/StopArea.gd" id="1_knxu4"]
+
+[resource]
+script = ExtResource("1_knxu4")
+name = "StopArea"
+metadata/_custom_type_script = "uid://ht006ss8c7s0"

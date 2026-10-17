@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SpawnDamage" format=3 uid="uid://c50lub2wdxrvg"]
+
+[ext_resource type="Script" uid="uid://cijblyk76a0t7" path="res://Resource/RScripts/SpawnDamage.gd" id="1_a634o"]
+[ext_resource type="PackedScene" uid="uid://u1mrh0myydfg" path="res://Scenes/Entitys/Object/arrow.tscn" id="2_rkou5"]
+
+[resource]
+script = ExtResource("1_a634o")
+spawn_entity = ExtResource("2_rkou5")
+name = "ArrowDamage"
+type = 3
+metadata/_custom_type_script = "uid://cijblyk76a0t7"

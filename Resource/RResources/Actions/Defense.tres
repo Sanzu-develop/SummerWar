@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Defense" format=3 uid="uid://brfi1vc1x1tnj"]
+
+[ext_resource type="Script" uid="uid://wnme7j4a6min" path="res://Resource/RScripts/Defense.gd" id="1_gph20"]
+
+[resource]
+script = ExtResource("1_gph20")
+name = "Defense"
+type = 1
+metadata/_custom_type_script = "uid://wnme7j4a6min"

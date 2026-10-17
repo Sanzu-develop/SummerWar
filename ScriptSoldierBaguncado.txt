@@ -1,0 +1,76 @@
+class_name Soldier
+extends CharacterBody2D
+
+
+@export var atributes_resource: SoldierResource
+
+@export var animated_sprite : AnimatedSprite2D
+@export var area : Area2D
+
+@export var control_by: int = -1
+
+var direction: Vector2 = Vector2.ZERO
+var death: bool = false
+
+func _ready() -> void:
+	set_atribute_resource(atributes_resource)
+
+func _physics_process(delta: float) -> void:
+	if death: return
+	
+	if control_by == 0: direction = Input.get_vector("ui_left","ui_right","ui_up","ui_down") if running_animation("idle") or running_animation("walk") else Vector2.ZERO
+	
+	var speed = atributes_resource.get_speed()
+	velocity = velocity.move_toward(direction * speed, (10.0 * delta) * speed)
+	
+	if direction.x != 0:
+		animated_sprite.scale.x = sign(direction.x)
+	
+	if direction: play("walk")
+	elif running_animation("walk"): play("idle")
+	
+	move_and_slide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if death: return
+	if event is InputEventKey:
+		if control_by == 0:
+			if event.keycode == KEY_E and not event.echo and event.pressed:
+				var anim = "action2" if event.shift_pressed else "action1"
+				play(anim)
+			elif event.keycode == KEY_Q and not event.echo and event.pressed:
+				play("action3")
+
+func set_atribute_resource(new_resource: SoldierResource):
+	atributes_resource = new_resource.duplicate(true)
+	_update()
+
+func _update():
+	animated_sprite.sprite_frames = atributes_resource.animation
+
+func damage(count: int):
+	play("damage")
+	if atributes_resource.damage(count):
+		death = true
+		play("death")
+
+# Sprite Animation
+
+func play(animation_name: String):
+	if animated_sprite.sprite_frames.has_animation(animation_name) and animated_sprite.animation != animation_name:
+		animated_sprite.play(animation_name)
+
+func running_animation(animation_name: String) -> bool:
+	return animated_sprite.sprite_frames.has_animation(animation_name) and animated_sprite.animation == animation_name
+
+func _on_sprite_animation_finished() -> void:
+	if not death: play("idle")
+
+func _on_sprite_frame_changed() -> void:
+	atributes_resource.execute_action(self,animated_sprite.animation,animated_sprite.frame)
+
+func _on_area_body_entered(body: Node2D) -> void:
+	if body == self: return
+	if body is Soldier:
+		var strength = atributes_resource.get_strength()
+		body.damage(strength)

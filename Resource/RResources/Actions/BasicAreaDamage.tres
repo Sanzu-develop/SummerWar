@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="AreaDamage" format=3 uid="uid://ngobhxyim6ga"]
+
+[ext_resource type="Script" uid="uid://dt4u73droe2ch" path="res://Resource/RScripts/AreaDamage.gd" id="1_ohfym"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohfym"]
+radius = 16.0
+
+[resource]
+script = ExtResource("1_ohfym")
+shape = SubResource("CircleShape2D_ohfym")
+name = "CircleDamage"
+type = 2
+metadata/_custom_type_script = "uid://dt4u73droe2ch"

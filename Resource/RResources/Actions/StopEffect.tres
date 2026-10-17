@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ActionEffect" format=3 uid="uid://cv3jo2blgvn17"]
+
+[ext_resource type="Script" uid="uid://c2qu2wgabyvtd" path="res://Resource/RScripts/ActionEffect.gd" id="1_jifw5"]
+
+[resource]
+script = ExtResource("1_jifw5")
+effect_name = "stop"
+name = "StopEffect"
+metadata/_custom_type_script = "uid://c2qu2wgabyvtd"

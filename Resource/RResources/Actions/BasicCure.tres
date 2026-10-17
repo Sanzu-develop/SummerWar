@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="CureEffect" format=3 uid="uid://ds6lwb6l0wryc"]
+
+[ext_resource type="Script" uid="uid://c82ahqgn46bur" path="res://Resource/RScripts/CureEffect.gd" id="1_oeccq"]
+
+[resource]
+script = ExtResource("1_oeccq")
+name = "BasicCure"
+type = 4
+metadata/_custom_type_script = "uid://c82ahqgn46bur"

@@ -1,0 +1,707 @@
+[gd_scene format=4 uid="uid://cx84fvpthah8p"]
+
+[ext_resource type="Texture2D" uid="uid://uwj1dhuba2lk" path="res://Sprites/Persons/Human_Soldier_Sword_Shield-Sheet.png" id="1_nhmg3"]
+[ext_resource type="Script" uid="uid://b8g20sk025m3p" path="res://Script/SUI/Menu.gd" id="1_t1b1y"]
+[ext_resource type="Texture2D" uid="uid://d6vbljc7324s" path="res://Sprites/Persons/Demon_A.png" id="1_uk6bn"]
+[ext_resource type="Texture2D" uid="uid://0h2ltksfuoum" path="res://Sprites/TileSet/Terrain/TilesetFloor.png" id="1_wuk0b"]
+[ext_resource type="PackedScene" uid="uid://gu5ym4d08h4i" path="res://Scenes/UI/Interface.tscn" id="2_tjcm1"]
+
+[sub_resource type="Gradient" id="Gradient_t1b1y"]
+colors = PackedColorArray(0.5568628, 0.5882353, 0.8156863, 1, 0.5568628, 0.47058824, 0.58431375, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xrivr"]
+gradient = SubResource("Gradient_t1b1y")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjcm1"]
+texture = ExtResource("1_wuk0b")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+16:0/0 = 0
+17:0/0 = 0
+18:0/0 = 0
+19:0/0 = 0
+20:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+16:1/0 = 0
+17:1/0 = 0
+18:1/0 = 0
+19:1/0 = 0
+20:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+12:2/0 = 0
+13:2/0 = 0
+14:2/0 = 0
+15:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+12:3/0 = 0
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+11:4/0 = 0
+12:4/0 = 0
+15:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+11:5/0 = 0
+12:5/0 = 0
+13:5/0 = 0
+14:5/0 = 0
+15:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+11:8/0 = 0
+12:8/0 = 0
+13:8/0 = 0
+14:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+14:10/0 = 0
+15:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+11:11/0 = 0
+12:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+0:12/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+13:12/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+0:13/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+0:14/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+2:15/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+13:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+0:16/0 = 0
+1:16/0 = 0
+2:16/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+12:16/0 = 0
+13:16/0 = 0
+14:16/0 = 0
+15:16/0 = 0
+16:16/0 = 0
+17:16/0 = 0
+18:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+0:17/0 = 0
+1:17/0 = 0
+2:17/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+10:17/0 = 0
+11:17/0 = 0
+12:17/0 = 0
+13:17/0 = 0
+14:17/0 = 0
+15:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+0:18/0 = 0
+1:18/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+7:18/0 = 0
+8:18/0 = 0
+11:18/0 = 0
+12:18/0 = 0
+14:18/0 = 0
+15:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+0:19/0 = 0
+1:19/0 = 0
+2:19/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+11:19/0 = 0
+12:19/0 = 0
+13:19/0 = 0
+14:19/0 = 0
+15:19/0 = 0
+0:20/0 = 0
+1:20/0 = 0
+2:20/0 = 0
+3:20/0 = 0
+4:20/0 = 0
+5:20/0 = 0
+11:20/0 = 0
+12:20/0 = 0
+13:20/0 = 0
+14:20/0 = 0
+15:20/0 = 0
+16:20/0 = 0
+0:21/0 = 0
+1:21/0 = 0
+2:21/0 = 0
+3:21/0 = 0
+4:21/0 = 0
+5:21/0 = 0
+6:21/0 = 0
+7:21/0 = 0
+8:21/0 = 0
+9:21/0 = 0
+11:21/0 = 0
+12:21/0 = 0
+13:21/0 = 0
+14:21/0 = 0
+15:21/0 = 0
+16:21/0 = 0
+17:21/0 = 0
+18:21/0 = 0
+19:21/0 = 0
+20:21/0 = 0
+0:22/0 = 0
+1:22/0 = 0
+2:22/0 = 0
+3:22/0 = 0
+4:22/0 = 0
+5:22/0 = 0
+6:22/0 = 0
+7:22/0 = 0
+8:22/0 = 0
+9:22/0 = 0
+11:22/0 = 0
+12:22/0 = 0
+13:22/0 = 0
+14:22/0 = 0
+15:22/0 = 0
+16:22/0 = 0
+17:22/0 = 0
+18:22/0 = 0
+19:22/0 = 0
+20:22/0 = 0
+0:23/0 = 0
+1:23/0 = 0
+2:23/0 = 0
+3:23/0 = 0
+4:23/0 = 0
+5:23/0 = 0
+6:23/0 = 0
+7:23/0 = 0
+8:23/0 = 0
+9:23/0 = 0
+10:23/0 = 0
+11:23/0 = 0
+12:23/0 = 0
+13:23/0 = 0
+14:23/0 = 0
+15:23/0 = 0
+16:23/0 = 0
+17:23/0 = 0
+18:23/0 = 0
+19:23/0 = 0
+20:23/0 = 0
+21:23/0 = 0
+0:24/0 = 0
+1:24/0 = 0
+2:24/0 = 0
+4:24/0 = 0
+5:24/0 = 0
+6:24/0 = 0
+7:24/0 = 0
+8:24/0 = 0
+9:24/0 = 0
+10:24/0 = 0
+11:24/0 = 0
+12:24/0 = 0
+13:24/0 = 0
+15:24/0 = 0
+16:24/0 = 0
+17:24/0 = 0
+18:24/0 = 0
+19:24/0 = 0
+20:24/0 = 0
+21:24/0 = 0
+0:25/0 = 0
+4:25/0 = 0
+5:25/0 = 0
+6:25/0 = 0
+7:25/0 = 0
+8:25/0 = 0
+15:25/0 = 0
+16:25/0 = 0
+17:25/0 = 0
+18:25/0 = 0
+19:25/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xrivr"]
+sources/0 = SubResource("TileSetAtlasSource_tjcm1")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4twqa"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(0, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttkkf"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(100, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxfgg"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(200, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0i46"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(300, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fied4"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(400, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5hva"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(500, 300, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0ox7"]
+atlas = ExtResource("1_uk6bn")
+region = Rect2(600, 300, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ukh7q"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_4twqa")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ttkkf")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_dxfgg")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_q0i46")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_fied4")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_s5hva")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_c0ox7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk6bn"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuk0b"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1b1y"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjcm1"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(288, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ugp1d"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(384, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rb4ur"]
+atlas = ExtResource("1_nhmg3")
+region = Rect2(480, 288, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_uk6bn")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_wuk0b")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_t1b1y")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_tjcm1")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_ugp1d")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_rb4ur")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Menu" type="Control" unique_id=1794817934 node_paths=PackedStringArray("spawn_interface", "transition")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t1b1y")
+packed_interface = ExtResource("2_tjcm1")
+spawn_interface = NodePath("Spawn_Interface")
+transition = NodePath("EffectTransition")
+
+[node name="BackGround" type="TextureRect" parent="." unique_id=1169506304]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_xrivr")
+
+[node name="MarginGeral" type="MarginContainer" parent="." unique_id=297878061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="MarginGeral" unique_id=116500381]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginGeral/VBox" unique_id=104379171]
+layout_mode = 2
+text = "Summer War"
+horizontal_alignment = 1
+
+[node name="Hud" type="HBoxContainer" parent="MarginGeral/VBox" unique_id=1136220316]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="VBoxContainer" parent="MarginGeral/VBox/Hud" unique_id=271035206]
+layout_mode = 2
+
+[node name="History" type="Button" parent="MarginGeral/VBox/Hud/Buttons" unique_id=1874054873]
+custom_minimum_size = Vector2(64, 24)
+layout_mode = 2
+text = "Historia"
+
+[node name="Duelo" type="Button" parent="MarginGeral/VBox/Hud/Buttons" unique_id=1712522633]
+custom_minimum_size = Vector2(64, 24)
+layout_mode = 2
+text = "Duelo"
+
+[node name="Images" type="Control" parent="MarginGeral/VBox/Hud" unique_id=2109438988]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Wall" type="TileMapLayer" parent="MarginGeral/VBox/Hud/Images" unique_id=252040370]
+tile_map_data = PackedByteArray("AAABAAEAAAAMAAgAAAABAAIAAAAMAAgAAAABAAMAAAAMAAgAAAABAAQAAAAMAAgAAAABAAUAAAAMAAgAAAABAAYAAAAMAAgAAAABAAcAAAAMAAgAAAABAAgAAAAMAAgAAAACAAEAAAAMAAgAAAACAAIAAAAQAAgAAAACAAMAAAANAAgAAAACAAQAAAAQAAkAAAACAAUAAAAMAAgAAAACAAYAAAAMAAgAAAACAAcAAAAMAAgAAAACAAgAAAAMAAgAAAADAAEAAAAMAAgAAAADAAIAAAANAAkAAAADAAMAAAALAAcAAAADAAQAAAARAAkAAAADAAUAAAAMAAgAAAADAAYAAAAMAAgAAAADAAcAAAAMAAgAAAADAAgAAAAMAAgAAAAEAAEAAAANAAkAAAAEAAIAAAALAAwAAAAEAAMAAAAMAAcAAAAEAAQAAAAMAAgAAAAEAAUAAAAMAAgAAAAEAAYAAAAMAAgAAAAEAAcAAAAMAAgAAAAEAAgAAAAMAAgAAAAFAAEAAAALAAwAAAAFAAIAAAALAAwAAAAFAAMAAAAMAAcAAAAFAAQAAAAMAAgAAAAFAAUAAAAMAAgAAAAFAAYAAAAMAAgAAAAFAAcAAAAMAAgAAAAFAAgAAAAMAAgAAAAGAAEAAAAOAAwAAAAGAAIAAAALAAwAAAAGAAMAAAAMAAcAAAAGAAQAAAAMAAgAAAAGAAUAAAAMAAgAAAAGAAYAAAAMAAgAAAAGAAcAAAAMAAgAAAAGAAgAAAAMAAgAAAAHAAEAAAALAAwAAAAHAAIAAAALAAwAAAAHAAMAAAAMAAcAAAAHAAQAAAAMAAgAAAAHAAUAAAAMAAgAAAAHAAYAAAAMAAgAAAAHAAcAAAAMAAgAAAAHAAgAAAAMAAgAAAAIAAEAAAALAAwAAAAIAAIAAAANAAwAAAAIAAMAAAAMAAcAAAAIAAQAAAAMAAgAAAAIAAUAAAAMAAgAAAAIAAYAAAAMAAgAAAAIAAcAAAAMAAgAAAAIAAgAAAAMAAgAAAAJAAEAAAALAAwAAAAJAAIAAAALAAwAAAAJAAMAAAAMAAcAAAAJAAQAAAAMAAgAAAAJAAUAAAAMAAgAAAAJAAYAAAAMAAgAAAAJAAcAAAAMAAgAAAAJAAgAAAAMAAgAAAAKAAEAAAALAAwAAAAKAAIAAAALAAwAAAAKAAMAAAAMAAcAAAAKAAQAAAAMAAgAAAAKAAUAAAAMAAgAAAAKAAYAAAAMAAgAAAAKAAcAAAAMAAgAAAAKAAgAAAAMAAgAAAALAAEAAAALAAwAAAALAAIAAAALAAwAAAALAAMAAAAMAAcAAAALAAQAAAAMAAgAAAALAAUAAAAMAAgAAAALAAYAAAAMAAgAAAALAAcAAAAMAAgAAAALAAgAAAAMAAgAAAAMAAEAAAANAAwAAAAMAAIAAAALAAwAAAAMAAMAAAAMAAcAAAAMAAQAAAAMAAgAAAAMAAUAAAAMAAgAAAAMAAYAAAAMAAgAAAAMAAcAAAAMAAgAAAAMAAgAAAAMAAgAAAANAAEAAAALAAwAAAANAAIAAAALAAwAAAANAAMAAAAMAAcAAAANAAQAAAAMAAgAAAANAAUAAAAMAAgAAAANAAYAAAAMAAgAAAANAAcAAAAMAAgAAAANAAgAAAAMAAgAAAAOAAEAAAALAAwAAAAOAAIAAAALAAwAAAAOAAMAAAANAAcAAAAOAAQAAAANAAgAAAAOAAUAAAANAAgAAAAOAAYAAAANAAgAAAAOAAcAAAANAAgAAAAOAAgAAAANAAgAAAAPAAEAAAALAAwAAAAPAAIAAAAOAAwAAAAPAAMAAAALAAwAAAAPAAQAAAAMAAwAAAAPAAUAAAALAAwAAAAPAAYAAAALAAwAAAAPAAcAAAALAAwAAAAPAAgAAAAMAAwAAAAQAAEAAAALAAwAAAAQAAIAAAALAAwAAAAQAAMAAAALAAwAAAAQAAQAAAALAAwAAAAQAAUAAAALAAwAAAAQAAYAAAANAAwAAAAQAAcAAAALAAwAAAAQAAgAAAALAAwAAAA=")
+tile_set = SubResource("TileSet_xrivr")
+
+[node name="ImageSeparator" type="HBoxContainer" parent="MarginGeral/VBox/Hud/Images" unique_id=812779815]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Control" type="Control" parent="MarginGeral/VBox/Hud/Images/ImageSeparator" unique_id=1319037108]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginGeral/VBox/Hud/Images/ImageSeparator/Control" unique_id=336344010]
+position = Vector2(-36, 0)
+sprite_frames = SubResource("SpriteFrames_ukh7q")
+autoplay = "default"
+frame_progress = 0.95742154
+
+[node name="Control2" type="Control" parent="MarginGeral/VBox/Hud/Images/ImageSeparator" unique_id=301473363]
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MarginGeral/VBox/Hud/Images/ImageSeparator/Control2" unique_id=1926300024]
+position = Vector2(-36, 0)
+sprite_frames = SubResource("SpriteFrames_xrivr")
+autoplay = "default"
+frame_progress = 0.2259445
+flip_h = true
+
+[node name="Spawn_Interface" type="Control" parent="." unique_id=61138118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="EffectTransition" type="ColorRect" parent="." unique_id=1631137452]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="MarginGeral/VBox/Hud/Buttons/History" to="." method="_on_history_pressed"]

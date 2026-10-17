@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b167564fyiw7g"]
+
+[ext_resource type="Script" uid="uid://cuvm132jn0nt8" path="res://Script/World/world.gd" id="1_cpkch"]
+[ext_resource type="PackedScene" uid="uid://cfygeyvgo1ke8" path="res://Scenes/Worlds/City.tscn" id="2_x7v1i"]
+[ext_resource type="PackedScene" uid="uid://c5tcplbw1xqo1" path="res://Scenes/Entitys/Persons/soldier.tscn" id="3_y2sdx"]
+[ext_resource type="Script" uid="uid://c3mu8olyehaps" path="res://Script/SUI/spawn.gd" id="7_8q0pn"]
+[ext_resource type="Script" uid="uid://tadk4msyb3j3" path="res://Resource/RScripts/BasicSoldier.gd" id="8_1h6gp"]
+[ext_resource type="Resource" uid="uid://dbo8gvn38ad88" path="res://Resource/RResources/RPersons/Soldier1.tres" id="9_7glap"]
+[ext_resource type="Resource" uid="uid://dgcn57vh6o6su" path="res://Resource/RResources/RPersons/Soldier2.tres" id="10_jg8xj"]
+[ext_resource type="Resource" uid="uid://bcustc16csjcy" path="res://Resource/RResources/RPersons/Monster1.tres" id="11_6uf5f"]
+[ext_resource type="Resource" uid="uid://dq7jmv8big1ky" path="res://Resource/RResources/RPersons/Monster2.tres" id="12_0ykar"]
+[ext_resource type="Resource" uid="uid://cy0kwjpfsuqpq" path="res://Resource/RResources/RPersons/Demon1.tres" id="13_q4fwo"]
+[ext_resource type="Resource" uid="uid://c5vxloh6cpehc" path="res://Resource/RResources/RPersons/Demon2.tres" id="14_u3kbp"]
+
+[node name="World" type="Node2D" unique_id=1250342799 node_paths=PackedStringArray("tilemaps", "spawn", "entitys")]
+script = ExtResource("1_cpkch")
+tilemaps = NodePath("TileMaps Wall")
+spawn = NodePath("Spawn")
+entitys = NodePath("Entitys")
+
+[node name="TileMaps Wall" type="Node2D" parent="." unique_id=1460025549]
+
+[node name="City" parent="TileMaps Wall" unique_id=1107240641 instance=ExtResource("2_x7v1i")]
+
+[node name="Spawn" type="Node2D" parent="." unique_id=1969340668]
+script = ExtResource("7_8q0pn")
+packed_player = ExtResource("3_y2sdx")
+soldier_resource_list = Array[ExtResource("8_1h6gp")]([ExtResource("9_7glap"), ExtResource("10_jg8xj"), ExtResource("11_6uf5f"), ExtResource("12_0ykar"), ExtResource("13_q4fwo"), ExtResource("14_u3kbp")])
+
+[node name="Entitys" type="Node2D" parent="." unique_id=707947071]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1166989294]
+position = Vector2(-8, -429)

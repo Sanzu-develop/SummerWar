@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Defense" format=3 uid="uid://dhpf6ofcvn7gl"]
+
+[ext_resource type="Script" uid="uid://wnme7j4a6min" path="res://Resource/RScripts/Defense.gd" id="1_wn662"]
+
+[resource]
+script = ExtResource("1_wn662")
+active = false
+name = "StopDefense"
+metadata/_custom_type_script = "uid://wnme7j4a6min"
