@@ -10,6 +10,7 @@ signal atualize_life
 @export var spawn_position: Vector2
 @export var atributes_resource: SoldierResource
 @export var atributes_resource_list: Array[SoldierResource]
+@export var soldier_next: int = 1
 @export var animated_sprite: AnimatedSprite2D
 @export var effects_sprites: AnimatedSprite2D
 @export var area: Area2D
@@ -40,6 +41,8 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if atributes_resource:
 		set_atribute_resource(atributes_resource)
+	if atributes_resource_list.size() > 0: soldier_next = soldier_next % atributes_resource_list.size()
+	
 	play("idle")
 
 
@@ -56,21 +59,10 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if death or control_by == -1 or not is_multiplayer_authority(): 
 		return
-		
+	
 	if event is InputEventKey and event.pressed and not event.echo:
-		if event.shift_pressed and control_by == 1 or event.ctrl_pressed and control_by == 0:
-			if event.keycode == KEY_1:
-				atributes_resource = atributes_resource_list[0]
-			elif event.keycode == KEY_2:
-				atributes_resource = atributes_resource_list[1]
-			elif event.keycode == KEY_3:
-				atributes_resource = atributes_resource_list[2]
-			elif event.keycode == KEY_4:
-				atributes_resource = atributes_resource_list[3]
-			elif event.keycode == KEY_5:
-				atributes_resource = atributes_resource_list[4]
-			elif event.keycode == KEY_6:
-				atributes_resource = atributes_resource_list[5]
+		if event.shift_pressed and control_by == 1 or event.ctrl_pressed and control_by == 0 or event.keycode == KEY_TAB and not NetworkManager.is_multiplayer_active():
+			pass_next_soldier_list()
 			_update_attributes()
 		
 		if not is_playing("idle") and not is_playing("walk"): return
@@ -167,6 +159,13 @@ func revive():
 		revived.emit()
 
 
+func pass_next_soldier_list():
+	if atributes_resource_list.size() == 0: return
+	if soldier_next < 0 or soldier_next >= atributes_resource_list.size(): soldier_next %= atributes_resource_list.size()
+	if atributes_resource_list[soldier_next]: atributes_resource = atributes_resource_list[soldier_next]
+	soldier_next = (soldier_next + 1) % atributes_resource_list.size()
+
+
 # ==============================================================================
 # SISTEMA DE ANIMAÇÕES E EVENTOS
 # ==============================================================================
@@ -200,7 +199,7 @@ func _on_sprite_animation_finished() -> void:
 	# Retorna para idle quando qualquer animação (ataque, dano, etc) termina, a menos que esteja morto
 	if not death:
 		play("idle")
-	else: revive()
+
 
 func _on_sprite_frame_changed() -> void:
 	if atributes_resource:
@@ -219,7 +218,7 @@ func _on_area_body_entered(body: Node2D) -> void:
 	if body == self or death: 
 		return
 		
-	if body is Soldier:
+	if body is Soldier or body is Tower:
 		var strength = atributes_resource.get_strength()
 		var atack_sucess = body.damage(strength,self)
 		if atack_sucess: atributes_resource.call_deferred("execute_action_key",self,"attack",0)

@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://5j2r5dfcld68"]
 
 [ext_resource type="Texture2D" uid="uid://cqnn5x16qvapu" path="res://Sprites/TileSet/Terrain/TilesetTowers.png" id="1_58yr7"]
+[ext_resource type="Script" uid="uid://dpks3wqfkmn2d" path="res://Script/SEntitys/tower.gd" id="1_pduf7"]
+[ext_resource type="Script" uid="uid://co5fusdcdxp5u" path="res://Script/SUI/life_bar.gd" id="3_hkgl5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
 radius = 15.0
 
-[node name="Tower" type="StaticBody2D" unique_id=91928865]
+[node name="Tower" type="StaticBody2D" unique_id=91928865 node_paths=PackedStringArray("sprite")]
+script = ExtResource("1_pduf7")
+sprite = NodePath("Sprite")
+color_life = Color(0, 1, 0.6392157, 1)
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=295056586]
 texture = ExtResource("1_58yr7")
@@ -15,3 +20,12 @@ vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1130673250]
 shape = SubResource("CircleShape2D_xrivr")
+
+[node name="LifeBar" type="Sprite2D" parent="." unique_id=40683044 node_paths=PackedStringArray("tower")]
+offset = Vector2(0, -32)
+script = ExtResource("3_hkgl5")
+tower = NodePath("..")
+height = 10
+metadata/_custom_type_script = "uid://co5fusdcdxp5u"
+
+[connection signal="atualize_life" from="." to="LifeBar" method="atualize_image"]

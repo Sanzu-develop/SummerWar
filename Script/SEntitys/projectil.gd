@@ -23,7 +23,7 @@ func set_new_image(new_image: Texture2D):
 
 func _on_body_entered(body: Node2D) -> void:
 	if body == parent: return
-	if body is Soldier:
+	if body is Soldier or body is Tower:
 		body.damage(damage,self)
 		queue_free()  
 
